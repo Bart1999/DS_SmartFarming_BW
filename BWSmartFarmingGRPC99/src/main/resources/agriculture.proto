@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+//package that will hold the auto-generated code
+option java_package = "bw.project.smartfarming";
+//allows different java files to be generated for different classes
+option java_multiple_files = true;
+option java_outer_classname = "BW_SmartFarmingServiceImpl";
+
+
+//conflict resolution to separate classes with same name
+package smart_farm;
+
+
+service SmartAutoSystem{
+	//-----------------------------Service 1------------------------------
+	rpc tractorSensor(TractorRequest) returns (TractorReply) {}
+
+
+	//-----------------------------Service 2------------------------------
+	rpc irrigationSensor(IrrigationRequest) returns (IrrigationReply) {}
+
+
+	//-----------------------------Service 3------------------------------
+	rpc livestockSensor(LivestockRequest) returns (LivestockReply) {}
+
+
+
+
+}
+
+//request message sent from client to server
+message TractorRequest{
+	string name = 1;
+	int32 number = 2;
+}
+
+//response message sent from server to client
+message TractorReply{
+	string response = 1;
+}
+
+
+//request message sent from client to server
+message IrrigationRequest{
+	string name = 1;
+	int32 number = 2;
+}
+
+//response message sent from server to client
+message IrrigationReply{
+	string response = 1;
+}
+
+//request message sent from client to server
+message LivestockRequest{
+	string name = 1;
+	int32 number = 2;
+}
+
+//response message sent from server to client
+message LivestockReply{
+	string response = 1;
+}
